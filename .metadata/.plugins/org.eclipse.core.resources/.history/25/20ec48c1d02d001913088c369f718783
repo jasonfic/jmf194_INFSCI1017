@@ -1,0 +1,87 @@
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.*;
+
+public class Song {
+	private String songID;
+	private String title;
+	private int length;
+	private String filePath;
+	private String releaseDate;
+	private String recordDate;
+	private Map<String, Artist> songArtists;
+	private DbUtilities db;
+	
+	public Song(String title, int length, String releaseDate, String recordDate) {
+		db = new DbUtilities();
+		UUID uSongID = UUID.randomUUID();
+		songID = uSongID.toString();
+		this.title = title;
+		this.length = length;
+		this.releaseDate = releaseDate;
+		this.recordDate = recordDate;
+		
+		String sql = "INSERT INTO song (title, length, release_date, record_date) VALUES ('" + title + "', '" + length + "', '" + releaseDate + "', '" + recordDate + "');";
+		System.out.println(sql);
+		db.executeQuery(sql);
+	}
+	public Song(String songID) {
+		this.songID = songID;
+		db = new DbUtilities();
+		String sql = "SELECT title, length, release_date, record_date FROM song WHERE song_id = '" + songID + "';";
+		ResultSet rs = null;
+		try {
+			rs = db.getResultSet(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		try {
+			if (rs.next()) {
+				this.title = rs.getString(1);
+				String strLength = rs.getString(2);
+				this.length = Integer.parseInt(strLength);
+				this.setReleaseDate(rs.getString(3));
+				this.setRecordDate(rs.getString(4));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	public void deleteSong(String songID) {
+		this.songID = songID;
+		db = new DbUtilities();
+		String sql = "DELETE FROM artist WHERE artist_id = '" + songID + "';";
+		System.out.println(sql);
+		db.executeQuery(sql);
+	}
+	public String getSongID() {
+		return songID;
+	}
+	public void setSongID(String songID) {
+		this.songID = songID;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public int getLength() {
+		return length;
+	}
+	public void setLength(int length) {
+		this.length = length;
+	}
+	public String getReleaseDate() {
+		return releaseDate;
+	}
+	public void setReleaseDate(String releaseDate) {
+		this.releaseDate = releaseDate;
+	}
+	public String getRecordDate() {
+		return recordDate;
+	}
+	public void setRecordDate(String recordDate) {
+		this.recordDate = recordDate;
+	}
+}

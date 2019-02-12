@@ -1,0 +1,43 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.UUID;
+
+public class MusicTester {
+
+	public static void main(String[] args) {
+		String server = "sis-teach-01.sis.pitt.edu";
+		String port = "3306";
+		String username = "infsci1017_2019";
+		String password = "infsci1017_2019!";
+		String dbName = "music2019";
+		
+		String mySqlConn = "jdbc:mysql://" + server + "/" + dbName + "?user=" + username + "&password=" + password;
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			Connection conn = DriverManager.getConnection(mySqlConn);
+			
+			String sql = "INSERT INTO genre (genre_name, description) VALUES ('jazz', 'very smooth music')";
+			Statement statement = conn.createStatement();
+			statement.executeUpdate(sql);
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		Song s = new Song("thank u next", 3, "2019-02-08 00:00:00", "2018-10-01 00:00:00");
+			System.out.println(s.getSongID());
+			System.out.println(s.getTitle());
+			System.out.println(s.getLength());
+			System.out.println(s.getReleaseDate());
+			System.out.println(s.getRecordDate());
+			s.getFilePath();
+	}
+
+}

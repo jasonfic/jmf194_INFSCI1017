@@ -1,0 +1,12 @@
+
+public class MusicTester {
+
+	public static void main(String[] args) {
+		String server = "sis-teach-01.sis.pitt.edu";
+		String port = "3306";
+		String username = "infsci1017_2019";
+		String password = "infsci1017_2019!";
+		String dbName = "music2019";
+	}
+
+}
