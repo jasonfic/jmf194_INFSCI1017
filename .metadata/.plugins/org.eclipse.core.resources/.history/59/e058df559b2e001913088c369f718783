@@ -1,0 +1,17 @@
+public class MusicTester {
+
+	public static void main(String[] args) {
+		Song s = new Song("1f196bbd-752f-4003-96c2-e39bbb0f8693");
+			System.out.println(s.getTitle());
+			System.out.println(s.getLength());
+			System.out.println(s.getFilePath());
+		Song s1 = new Song("FlatBed Freestyle", 3, "2018-05-11 00:00:00", "2017-12-30 00:00:00");
+			System.out.println(s1.getSongID());
+			System.out.println(s1.getTitle());
+			System.out.println(s1.getLength());
+			System.out.println(s1.getReleaseDate());
+			System.out.println(s1.getRecordDate());
+			s1.setFilePath("music/artists/Playboi_Carti/albums/Die_Lit/FlatBed_Freestyle.mp3");
+	}
+
+}

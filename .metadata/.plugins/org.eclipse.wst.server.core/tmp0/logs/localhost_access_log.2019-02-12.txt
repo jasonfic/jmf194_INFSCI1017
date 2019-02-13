@@ -1,0 +1,8 @@
+127.0.0.1 - - [12/Feb/2019:01:42:41 -0500] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [12/Feb/2019:01:42:42 -0500] "GET /jmf194_Music/WEB-INF/classes/ConnectTest.java HTTP/1.1" 404 1047
+127.0.0.1 - - [12/Feb/2019:01:50:34 -0500] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [12/Feb/2019:01:50:35 -0500] "GET /MusicWithSQL/Index.html HTTP/1.1" 200 135
+0:0:0:0:0:0:0:1 - - [12/Feb/2019:02:05:35 -0500] "GET /MusicWithSQL/WEB-INF/classes/ConnectTest.java HTTP/1.1" 404 1047
+0:0:0:0:0:0:0:1 - - [12/Feb/2019:02:06:05 -0500] "GET /MusicWithSQL/WEB-INF/classes/ConnectTest.java HTTP/1.1" 404 1047
+127.0.0.1 - - [12/Feb/2019:02:15:12 -0500] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [12/Feb/2019:02:15:13 -0500] "GET /MusicWithSQL/WEB-INF/classes/ConnectTest.java HTTP/1.1" 404 1047
