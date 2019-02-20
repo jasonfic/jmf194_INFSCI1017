@@ -1,1 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<albums>
+	<album>
+		<albumID>aea83934-ff98-4721-bab1-a7f3c9426677</albumID>
+		<title>JEFFERY</title>
+		<releaseDate>2016-08-26 00:00:00</releaseDate>
+		<coverImagePath>pictures/albums/JEFFERY.jpg</coverImagePath>
+		<recordingCompany>300/Atlantic</recordingCompany>
+		<numberOfTracks>10</numberOfTracks>
+		<pmrcRating>Explicit</pmrcRating>
+		<length>42</length>
+		<songs>
+			<song>
+				<songID>d7fc7f57-191f-4484-a1af-b29990e3ccc7</songID>
+				<title>Pick Up the Phone</title>
+				<length>4</length>
+				<filePath>music/PUTP.mp3</filePath>
+				<releaseDate>2016-06-03 00:00:00</releaseDate>
+				<recordDate>2016-03-01 00:00:00</recordDate>
+				<artists>
+					<artist>
+						<artistID>4ccf0f98-a92b-4531-aeae-e2c988ecb927</artistID>
+						<firstName>Jeffery</firstName>
+						<lastName>Williams</lastName>
+						<bandName>Young Thug</bandName>
+						<bio>Uses his voice as an instrument</bio>
+					</artist>
+					<artist>
+						<artistID>93114809-f380-4e01-aff5-f61985b1ae8e</artistID>
+						<firstName>Jacques</firstName>
+						<lastName>Webster</lastName>
+						<bandName>Travis Scott</bandName>
+						<bio>Inescapable at college parties</bio>
+					</artist>
+				</artists>
+			</song>
+		</songs>
+	</album>
+</albums>
