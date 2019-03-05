@@ -1,0 +1,30 @@
+/**
+ * this class is meant to test all the various methods from the Song, Artist, and Album classes
+ * @author Jason Ficorilli
+ * INFSCI 1017
+ * Homework 7
+ * 3/5/2019
+ */
+
+import javax.persistence.*;
+import java.util.*;
+import java.sql.*;
+
+public class MusicTester {
+
+	public static void main(String[] args) {
+		ManageSongs ms = new ManageSongs();
+		//ms.createSong("Trust Issues", 3, "2018-06-15 00:00:00", "2018-04-02 00:00:00", "music/Rico_Nasty/Nasty/Trust_Issues.mp3");
+		//ms.updateSong("049c56a3-631c-406a-a162-96a5aa0e87bf", "Blue Lights", 4, "2016-02-26 00:00:00", "2015-12-05 00:00:00", "music/Jorja_Smith/Lost&Found/Blue_Lights.mp3");
+		//ms.deleteSong("07f1623d-1d47-4d4e-a1f1-8f0c4b2e060a");
+		Song s = ms.findSong("159dc7df-6027-4718-9bd1-344755f289fb");
+			System.out.println(s.getSongID());
+			System.out.println(s.getTitle());
+			System.out.println(s.getLength());
+			System.out.println(s.getReleaseDate());
+			System.out.println(s.getRecordDate());
+			s.setFilePath("music/Playboi_Carti/Die_Lit/FlatBed_Freestyle.mp3");
+			System.out.println(s.getFilePath());
+	}
+
+}

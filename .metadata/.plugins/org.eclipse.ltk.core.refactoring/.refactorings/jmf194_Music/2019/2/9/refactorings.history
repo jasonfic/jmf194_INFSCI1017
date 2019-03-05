@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 6 elements to &apos;MusicJPA/src&apos;&#x0D;&#x0A;- Original project: &apos;jmf194_Music&apos;&#x0D;&#x0A;- Destination element: &apos;MusicJPA/src&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     Song.java&#x0D;&#x0A;     Album.java&#x0D;&#x0A;     MusicTester.java&#x0D;&#x0A;     Artist.java&#x0D;&#x0A;     DbUtilities.java&#x0D;&#x0A;     ConnectTest.java" description="Copy compilation units" destination="=MusicJPA/src" element1="/src&lt;{Song.java" element2="/src&lt;{Album.java" element3="/src&lt;{MusicTester.java" element4="/src&lt;{Artist.java" element5="/src&lt;{DbUtilities.java" element6="/src&lt;{ConnectTest.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1551226931320" units="6" version="1.0"/>
+</session>

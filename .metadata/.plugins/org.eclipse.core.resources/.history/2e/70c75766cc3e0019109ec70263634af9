@@ -1,0 +1,146 @@
+/**
+ * this class deals with the song table in the music2019 database
+ * it includes constructors, getters, setters, and methods to add and delete records with their relevant queries
+ * @author Jason Ficorilli
+ * INFSCI 1017
+ * Homework 7
+ * 3/5/2019
+ */
+
+import javax.persistence.*;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.*;
+import java.sql.*;
+
+@Entity
+@Table (name="song")
+public class Song {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	
+	@Column(name="song_id")
+	private String songID;
+	@Column(name="title")
+	private String title;
+	@Column(name="length")
+	private int length;
+	@Column(name="file_path")
+	private String filePath;
+	@Column(name="release_date")
+	private String releaseDate;
+	@Column(name="record_date")
+	private String recordDate;
+	@Transient
+	private Map<String, Artist> songArtists = new HashMap<String, Artist>();
+	@Transient
+	private Connection con;
+	@Transient
+	private PreparedStatement stmt;
+	
+	public Song() {
+		UUID uSongID = UUID.randomUUID();
+		songID = uSongID.toString();
+	}
+	
+	/**
+	 * used in addSong and deleteSong methods from Album class
+	 * @return song UUID so it can be accessed outside of class
+	 */
+	public String getSongID() {
+		return songID;
+	}
+	/**
+	 * 
+	 * @return title of given song
+	 */
+	public String getTitle() {
+		return title;
+	}
+	/**
+	 * runs a query to change the title of a given song entry
+	 * @param title
+	 */
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	/**
+	 * 
+	 * @return length of given song in minutes
+	 */
+	public int getLength() {
+		return length;
+	}
+	/**
+	 * runs query to update song table to edit the length of a given song
+	 * @param length
+	 */
+	public void setLength(int length) {
+		this.length = length;
+	}
+	/**
+	 * used in my tester code since it isn't set in constructor
+	 * @return the location of the song file in its folder
+	 */
+	public String getFilePath() {
+		return filePath;
+	}
+	/**
+	 * runs a query to change a given song's file path
+	 * @param filePath
+	 */
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
+	}
+	/**
+	 * 
+	 * @return release date of given song
+	 */
+	public String getReleaseDate() {
+		return releaseDate;
+	}
+	/**
+	 * runs a query to change the release date of a given song
+	 * @param releaseDate
+	 */
+	public void setReleaseDate(String releaseDate) {
+		this.releaseDate = releaseDate;
+	}
+	/**
+	 * 
+	 * @return the date a song was recorded
+	 */
+	public String getRecordDate() {
+		return recordDate;
+	}
+	/**
+	 * runs a query to allow the user to change the recording date of a song
+	 * @param recordDate
+	 */
+	public void setRecordDate(String recordDate) {
+		this.recordDate = recordDate;
+	}
+	/**
+	 * 
+	 * @return a HashMap object that places the key of an artist ID next to a reference to the Artist object that recorded the song
+	 */
+	public Map<String, Artist> getSongArtists() {
+		return songArtists;
+	}
+	/**
+	 * uses song ID to generate a new Song object and add it to the list
+	 * @param songArtists
+	 */
+	public void setSongArtists(Map<String, Artist> songArtists) {
+		//source: https://www.careerbless.com/samplecodes/java/beginners/collections_ds/inertandretrieveMap.php
+		Set keys = songArtists.keySet();
+        Iterator itr = keys.iterator();
+        String key;
+        while(itr.hasNext())
+        {
+        	key = (String) itr.next();
+        	Artist a = new Artist(key);
+            songArtists.put(key, a);
+        }
+	}
+}

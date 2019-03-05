@@ -1,0 +1,18 @@
+/**
+ * this class is meant to test all the various methods from the Song, Artist, and Album classes
+ * @author Jason Ficorilli
+ * INFSCI 1017
+ * Homework 5
+ * 2/12/2019
+ */
+
+import javax.persistence.*;
+import java.util.*;
+import java.sql.*;
+public class MusicTester {
+
+	public static void main(String[] args) {
+		
+	}
+
+}
