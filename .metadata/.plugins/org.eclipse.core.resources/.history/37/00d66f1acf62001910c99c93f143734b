@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Music Navigator</title>
+<script src="script/jquery-3.4.0.min.js"></script>
+<script>
+$(function() {
+    $("#includedContent").load(""); 
+});
+</script>
+</head>
+
+<body>
+<div id="includedContent"></div>
+<br/>
+<p font-size: 28px;>Welcome to our music web application! Use the menu above to navigate the site.</p>
+
+</body>
+</html>

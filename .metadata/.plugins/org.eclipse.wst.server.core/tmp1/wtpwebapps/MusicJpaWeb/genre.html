@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Music Genres</title>
+<script src="jsx/jquery-3.3.1.min.js">
+/*function test() {
+	// console.log(window.location.href);
+	var genreName = document.getElemetById("genreName");
+	console.log(genreName.value);
+}*/
+</script>
+</head>
+<body>
+	<div>
+		Genre Name: <input type="text" id="genreName" name="genreName" value="" />
+	</div>
+	<div>
+		Search Type:
+		<select name="searchType" id="searchType">
+			<option value="">Everything</option>
+			<option value="equals">Equals</option>
+			<option value="begins">Begins</option>
+			<option value="ends">Ends</option>
+			<option value="contains">Contains</option>
+		</select>
+	</div>
+	<div>
+		<input type="button" id="btnSearch" name="btnSubmit" value="Search" />
+	</div>
+
+</body>
+<script>
+	$(document).ready(function (){
+		$("#btnSearch").click(function (){
+			var genreName = $("#genreName").val();
+			var searchType = $("#searchType").val();
+			// console.log("Genre: " + genreName);
+			// console.log("SearchType: " + searchType);
+			var url = "GenreListWS?genreName=" + genreName + "&searchType=" + searchType;
+			// console.log(url);
+			$.get(url, function(resp){
+				console.log(resp[0]);
+			})
+		});
+	});
+</script>
+</html>

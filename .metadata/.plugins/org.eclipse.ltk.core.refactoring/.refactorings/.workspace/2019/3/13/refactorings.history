@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;MusicJPAWeb&apos;" deleteContents="false" description="Delete resource &apos;MusicJPAWeb&apos;" element1="/MusicJPAWeb" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1553638377737"/>
+</session>

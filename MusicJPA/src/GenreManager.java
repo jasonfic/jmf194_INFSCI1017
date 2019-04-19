@@ -65,5 +65,5 @@ public class GenreManager {
 		
 		em.close();
 		emFactory.close();
-	}
+	}	
 }

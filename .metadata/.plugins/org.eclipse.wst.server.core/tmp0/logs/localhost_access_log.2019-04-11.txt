@@ -1,0 +1,8 @@
+127.0.0.1 - - [11/Apr/2019:21:30:54 -0400] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [11/Apr/2019:21:30:55 -0400] "GET /jmf194_FinalProject/WEB-INF/classes/jmf194_FinalProject/Artist.java HTTP/1.1" 404 1047
+127.0.0.1 - - [11/Apr/2019:22:53:58 -0400] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [11/Apr/2019:22:53:59 -0400] "GET /jmf194_Music/WEB-INF/classes/ManageAlbums.java HTTP/1.1" 404 1047
+127.0.0.1 - - [11/Apr/2019:23:11:42 -0400] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [11/Apr/2019:23:11:43 -0400] "GET /MusicJpaWeb/genre2.html HTTP/1.1" 200 2527
+0:0:0:0:0:0:0:1 - - [11/Apr/2019:23:11:43 -0400] "GET /MusicJpaWeb/js/jquery-3.3.1.min.js HTTP/1.1" 404 1116
+0:0:0:0:0:0:0:1 - - [11/Apr/2019:23:11:43 -0400] "GET /MusicJpaWeb/css/style.css HTTP/1.1" 404 1107

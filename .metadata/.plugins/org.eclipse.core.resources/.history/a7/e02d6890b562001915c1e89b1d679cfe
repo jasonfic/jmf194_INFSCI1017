@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>View Songs</title>
+<script src="script/jquery-3.4.0.min.js"></script>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script>
+$(function() {
+    $("#includedContent").load("menu.html"); 
+});
+</script>
+</head>
+
+<body>
+<div id="includedContent"></div>
+<br/>
+<div id="searchResults">
+	<table id="tblSearchResults">
+		<tr>
+			<th>Song Title</th>
+			<th>Length</th>
+			<th>File Path</th>
+			<th>Release Date</th>
+			<th>Record Date</th>
+		</tr>
+	</table>
+</div>
+<script>
+	$(document).ready(function (){
+		search();
+	}
+	function search() {
+		var url = "SongListWS?title='Trust Issues'&searchType='q'";
+		$.get(url, function(resp){
+			showSongs(resp);
+		})
+	}
+	function showSongs(data) {
+		for(var i=0; i < data.length; i++){
+			// First data cell
+			var td = $("<td></td>"); // created empty html table data
+			td.html(data[i].title);
+			tr.append(td);
+			
+			// Second data cell
+			// Note that we don't need to redeclare this
+			td = $("<td></td>");
+			td.html(data[i].length)
+			tr.append(td);
+			
+			// Third data cell
+			td = $("<td></td>");
+			td.html(data[i].file_path)
+			tr.append(td);
+			
+			td = $("<td></td>");
+			td.html(data[i].release_date)
+			tr.append(td);
+			
+			td = $("<td></td>");
+			td.html(data[i].record_date)
+			tr.append(td);
+			
+			// Append row to the table
+			$("#tblSearchResults").append(tr);
+		}
+	}
+</script>
+</body>
+</html>

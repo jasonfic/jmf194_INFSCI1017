@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>View Artists</title>
+<script src="script/jquery-3.4.0.min.js"></script>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script>
+$(function() {
+    $("#includedContent").load("menu.html"); 
+});
+</script>
+</head>
+
+<body>
+<div id="includedContent"></div>
+<br/>
+<div id="searchResults">
+	<table id="tblSearchResults">
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Band Name</th>
+			<th>Biography</th>
+		</tr>
+	</table>
+</div>
+</body>
+<script>
+	window.onload = function (){
+		search();
+	}
+	function search() {
+		var url = "ArtistListWS?bandName=&searchType='all'";
+		$.get(url, function(resp){
+			showArtists(resp);
+		})
+	}
+	function showArtists(data) {
+		var result = "";
+		for(var i=0; i < data.length; i++){
+			var tr = $("<tr></tr>"); // created empty html table row
+			// First data cell
+			var td = $("<td></td>"); // created empty html table data
+			td.html(data[i].first_name);
+			tr.append(td);
+			
+			// Second data cell
+			// Note that we don't need to redeclare this
+			td = $("<td></td>");
+			td.html(data[i].last_name)
+			tr.append(td);
+			
+			// Third data cell
+			td = $("<td></td>");
+			td.html(data[i].band_name)
+			tr.append(td);
+			
+			td = $("<td></td>");
+			td.html(data[i].bio)
+			tr.append(td);
+			
+			// Append row to the table
+			$("#tblSearchResults").append(tr);
+		}
+	}
+</script>
+</html>
